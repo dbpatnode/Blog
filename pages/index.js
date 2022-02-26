@@ -1,28 +1,27 @@
 import React from 'react'
-import Posts from '../components/Posts'
-import { supabase } from '../utils/supabaseClient'
+import Link from 'next/link'
+import About from './about.js'
 
-// export async function getStaticProps(){
-//   const {data: posts, error} = await supabase.from('posts').select('*')
-  
-//   if(error) {
-//     throw new Error(error)
-//   }
-//   return {
-//     props: {
-//       posts
-//     }
-//     }
-//   }
 
-export default function Home({posts}) {
-
-  // console.log(posts)
+export default function Home() {
 
   return (
-    <div>
-      {/* {console.log(posts)} */}
-      <Posts/>
+  <div>
+      <nav>
+        <li>
+          <ul>
+            <Link href="/"> home </Link>
+          </ul>
+          <ul>
+            <Link href="/Posts"> Blogs </Link>{" "}
+          </ul>
+          <ul>
+            <Link href="/about"> About </Link>{" "}
+          </ul>
+        </li>
+      </nav>
+
+      <About/>
     </div>
   )
 }

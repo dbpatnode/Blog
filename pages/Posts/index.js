@@ -1,19 +1,5 @@
 import { useState, useEffect } from 'react'
-import { supabase } from '../utils/supabaseClient'
-
-// export async function getStaticProps(){
-//   const {data: posts, error} = await supabase.from('posts').select('*')
-  
-//   if(error) {
-//     throw new Error(error)
-//   }
-//   return {
-//     props: {
-//       posts
-//     }
-//     }
-//   }
-
+import { supabase } from '../../utils/supabaseClient'
 
 export default function Posts() {
     const [loading, setLoading] = useState(true)
