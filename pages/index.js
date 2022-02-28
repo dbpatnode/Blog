@@ -6,22 +6,8 @@ import About from './about.js'
 export default function Home() {
 
   return (
-  <div>
-      <nav>
-        <li>
-          <ul>
-            <Link href="/"> home </Link>
-          </ul>
-          <ul>
-            <Link href="/Posts"> Blogs </Link>{" "}
-          </ul>
-          <ul>
-            <Link href="/about"> About </Link>{" "}
-          </ul>
-        </li>
-      </nav>
-
-      <About/>
+    <div>
+      <h1>Home Page</h1>
     </div>
   )
 }
