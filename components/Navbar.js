@@ -9,8 +9,8 @@ export default function Navbar() {
         <nav>
             <li>
                 <ul><Link href="/"> home </Link></ul>
-                <ul><Link href="/Posts"> Blogs </Link>{" "}</ul>
-                <ul><Link href="/about"> About </Link>{" "}</ul>
+                <ul><Link href="/Posts"> Blogs </Link></ul>
+                <ul><Link href="/about"> About </Link></ul>
             </li>
         </nav>
     </div>

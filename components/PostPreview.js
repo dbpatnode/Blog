@@ -1,4 +1,5 @@
-import React from 'react'
+import Link from 'next/link'
+
 const PostPreview = ({ posts }) => {
     return (
         <div>
@@ -7,7 +8,7 @@ const PostPreview = ({ posts }) => {
             return (
                 is_published &&
                 <div key={id}>
-                    <h2>{title}</h2>
+                    <h2><Link href={`/Posts/${id}`}>{title}</Link></h2>
                     <p>{content}</p>
                 </div>     
             ) 

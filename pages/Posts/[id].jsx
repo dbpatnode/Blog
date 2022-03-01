@@ -1,17 +1,28 @@
-import { useState, useEffect } from 'react'
+import { supabase } from '../../utils/supabaseClient'
 
+export async function getServerSideProps({ params }) {
+    const { data: post, error } = await supabase
+    .from('posts')
+    .select('*')
+    .eq('id', params.id)
+    .single()
 
-export default function Post() {
-    // const [loading, setLoading] = useState(true)
-    // const [postData, setPostData] = useState(null)
-    
-    return <div> this is the blog post page</div>
+    if(error) {
+        alert(error.message)
+    }
+    return {
+        props: {
+            post
+        }
+    }
 }
 
-// export const getStaticPaths = () => {
-
-// }
-
-// export const getStaticProps = ({params}) => {
-    
-// }
+export default function PostPage ({ post }) {
+    const {title, content, id} = post
+    return (
+        <div key={id}>
+            <h2>{title}</h2>
+            <p>{content}</p>
+        </div>    
+    )
+}
