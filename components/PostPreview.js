@@ -1,8 +1,8 @@
 import React from 'react'
-const PostPreview = ({ postData }) => {
+const PostPreview = ({ posts }) => {
     return (
         <div>
-        {postData?.posts.map((post) => {
+        {posts?.map((post) => {
             const {is_published, title, content, id} = post
             return (
                 is_published &&

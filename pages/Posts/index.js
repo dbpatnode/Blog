@@ -1,25 +1,32 @@
-import { useState, useEffect } from 'react'
+import { useState} from 'react'
 import { getPosts } from '../../lib/Posts'
-import { Spinner } from '../../components/Spinner'
+// import { Spinner } from '../../components/Spinner'
 import PostPreview from '../../components/PostPreview'
 import styles from '../../styles/Home.module.css'
+import { supabase } from '../../utils/supabaseClient'
 
-export default function Posts() {
-    const [loading, setLoading] = useState(true)
-    const [postData, setPostData] = useState(null)
 
-    useEffect(() => {
-        getPosts(setLoading, setPostData, postData)
-      }, [])
-    
+export async function getStaticProps() {
+ 
+    const { data: posts, error } = await supabase
+    .from('posts')
+    .select('*')
+
+    if(error) {
+        alert(error.message)
+    }
+    return {
+        props: {
+            posts
+        }
+    }
+}
+
+export default function Posts({ posts }) {
     return (    
         <div className={styles.container}>
             <h1>Published Blogs</h1>
-                {loading ? 
-                    <Spinner/>
-                    :
-                    <PostPreview postData={postData}/>
-                }
+            <PostPreview posts={posts}/>
         </div>
     )
 }
