@@ -23,6 +23,8 @@ export default function PostPage ({ post }) {
         <div key={id}>
             <h2>{title}</h2>
             <p>{content}</p>
+            <button>Delete</button>
+            <button>Edit</button>
         </div>    
     )
 }
