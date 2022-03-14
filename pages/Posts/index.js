@@ -1,5 +1,5 @@
-import { useState} from 'react'
-import { getPosts } from '../../lib/Posts'
+// import { useState} from 'react'
+// import { getPosts } from '../../lib/Posts'
 // import { Spinner } from '../../components/Spinner'
 import PostPreview from '../../components/PostPreview'
 import styles from '../../styles/Home.module.css'
