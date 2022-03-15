@@ -3,20 +3,18 @@ import Link from "next/link";
 
 export default function Navbar() {
   return (
-    <div>
-      <nav>
+    <nav className="Navbar">
+      <ul>
         <li>
-          <ul>
-            <Link href="/"> home </Link>
-          </ul>
-          <ul>
-            <Link href="/Posts"> Blogs </Link>
-          </ul>
-          <ul>
-            <Link href="/about"> About </Link>
-          </ul>
+          <Link href="/"> Home </Link>
         </li>
-      </nav>
-    </div>
+        <li>
+          <Link href="/Posts"> Blogs </Link>
+        </li>
+        <li>
+          <Link href="/about"> About </Link>
+        </li>
+      </ul>
+    </nav>
   );
 }

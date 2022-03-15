@@ -35,8 +35,9 @@ export async function deletePost(id, router) {
 export default function PostPage({ post }) {
   const router = useRouter();
   const { title, content, id } = post;
+
   return (
-    <div key={id}>
+    <div className="" key={id}>
       <h2>{title}</h2>
       <p>{content}</p>
       <button
@@ -44,7 +45,7 @@ export default function PostPage({ post }) {
         onClick={() => {
           window.confirm("Are you sure you wish to delete this item?")
             ? deletePost(id, router)
-            : onCancel("cancel");
+            : "cancel";
         }}
       >
         Delete

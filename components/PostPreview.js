@@ -7,11 +7,11 @@ const PostPreview = ({ posts }) => {
         const { is_published, title, excerpt, id } = post;
         return (
           is_published && (
-            <div key={id}>
+            <div className="BlogPreview" key={id}>
               <h2>
                 <Link href={`/Posts/${id}`}>{title}</Link>
               </h2>
-              <p>{excerpt}</p>
+              <p> {excerpt} </p>
             </div>
           )
         );
