@@ -2,6 +2,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: black;
+  padding: 20px;
 
   ul {
     display: flex;
@@ -9,11 +11,10 @@
     width: 100%;
     margin: 0;
     padding: 0;
-    // gap: 60px;
     list-style: none;
 
     a {
-      color: inherit;
+      color: white;
       text-decoration: none;
       font-size: 30px;
       display: block;

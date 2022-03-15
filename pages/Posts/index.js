@@ -1,7 +1,7 @@
 import { useRouter } from "next/router";
 import { supabase } from "../../utils/supabaseClient";
 import PostPreview from "../../components/PostPreview";
-import styles from "../../styles/Home.module.scss";
+// import styles from "../../styles/Home.module.scss";
 
 export async function getStaticProps() {
   const { data: posts, error } = await supabase.from("posts").select("*");
@@ -35,7 +35,7 @@ export default function Posts({ posts }) {
   const router = useRouter();
 
   return (
-    <div className={styles.container}>
+    <div>
       <h1>Published Blogs</h1>
       <PostPreview posts={posts} />
       <button type="button" onClick={() => createPost(router)}>
