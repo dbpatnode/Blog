@@ -1,7 +1,5 @@
-import { redirect } from "next/dist/server/api-utils";
 import { useRouter } from "next/router";
 import { supabase } from "../../utils/supabaseClient";
-import Posts from "./index";
 
 export async function getServerSideProps({ params }) {
   const { data: post, error } = await supabase

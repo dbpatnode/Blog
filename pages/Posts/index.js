@@ -1,10 +1,7 @@
-// import { useState} from 'react'
-// import { getPosts } from '../../lib/Posts'
-// import { Spinner } from '../../components/Spinner'
 import { useRouter } from "next/router";
-import PostPreview from "../../components/PostPreview";
-import styles from "../../styles/Home.module.css";
 import { supabase } from "../../utils/supabaseClient";
+import PostPreview from "../../components/PostPreview";
+import styles from "../../styles/Home.module.scss";
 
 export async function getStaticProps() {
   const { data: posts, error } = await supabase.from("posts").select("*");
@@ -23,7 +20,6 @@ const defaultPost = {
   title: "default title",
   is_published: false,
   content: "this is some content",
-  // slug: "",
   excerpt: "dsajfksadjhf",
 };
 
@@ -43,8 +39,7 @@ export default function Posts({ posts }) {
       <h1>Published Blogs</h1>
       <PostPreview posts={posts} />
       <button type="button" onClick={() => createPost(router)}>
-        {" "}
-        Create New Post{" "}
+        Create New Post
       </button>
     </div>
   );
