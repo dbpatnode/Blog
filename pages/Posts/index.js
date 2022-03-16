@@ -2,7 +2,7 @@ import { useRouter } from "next/router";
 import { supabase } from "../../utils/supabaseClient";
 import PostPreview from "../../components/PostPreview";
 // import styles from "../../styles/Home.module.scss";
-
+import Button from "../../components/Button.js";
 export async function getStaticProps() {
   const { data: posts, error } = await supabase.from("posts").select("*");
 
@@ -45,6 +45,9 @@ export default function Posts({ posts }) {
       >
         Create New Post
       </button>
+      {/* <Button className={"blue-button"} handleClick={createPost()}>
+        Create New Post
+      </Button> */}
     </div>
   );
 }

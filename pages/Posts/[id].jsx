@@ -18,13 +18,14 @@ export async function getServerSideProps({ params }) {
   };
 }
 
-export async function updatePost(id, column) {
+export async function updatePost(id, router) {
   const { data, error } = await supabase
     .from("posts")
     .update({ is_published: true })
     .eq("id", id);
 
   console.log(error);
+  router.push("/Posts");
 }
 
 export async function deletePost(id, router) {
@@ -43,7 +44,7 @@ export default function PostPage({ post }) {
       <button
         type="button"
         className="green-button"
-        onClick={() => updatePost(id, "is_published")}
+        onClick={() => updatePost(id, router)}
       >
         Publish
       </button>
