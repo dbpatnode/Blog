@@ -1,16 +1,13 @@
 @import "navbar";
+@import "buttons";
 html,
 body {
   padding: 0;
   margin: 0;
+  background: rgb(235, 235, 235);
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
-
-// .center {
-//   display: flex;
-//   justify-content: center;
-// }
 
 h1 {
   text-align: center;

@@ -38,7 +38,11 @@ export default function Posts({ posts }) {
     <div>
       <h1>Published Blogs</h1>
       <PostPreview posts={posts} />
-      <button type="button" onClick={() => createPost(router)}>
+      <button
+        type="button"
+        className="blue-button"
+        onClick={() => createPost(router)}
+      >
         Create New Post
       </button>
     </div>

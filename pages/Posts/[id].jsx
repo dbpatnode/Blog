@@ -42,6 +42,14 @@ export default function PostPage({ post }) {
       <p>{content}</p>
       <button
         type="button"
+        className="green-button"
+        onClick={() => updatePost(id, "is_published")}
+      >
+        Publish
+      </button>
+      <button
+        type="button"
+        className="red-button"
         onClick={() => {
           window.confirm("Are you sure you wish to delete this item?")
             ? deletePost(id, router)
@@ -49,9 +57,6 @@ export default function PostPage({ post }) {
         }}
       >
         Delete
-      </button>
-      <button type="button" onClick={() => updatePost(id, "is_published")}>
-        Publish
       </button>
     </div>
   );
