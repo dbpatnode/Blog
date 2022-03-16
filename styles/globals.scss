@@ -1,5 +1,6 @@
 @import "navbar";
 @import "buttons";
+@import "posts";
 html,
 body {
   padding: 0;
@@ -11,6 +12,11 @@ body {
 
 h1 {
   text-align: center;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
 }
 
 a {

@@ -17,37 +17,58 @@ export async function getStaticProps() {
 }
 
 const defaultPost = {
-  title: "default title",
+  title: "default title2",
   is_published: false,
   content: "this is some content",
   excerpt: "dsajfksadjhf",
 };
 
-export async function createPost(router) {
-  const { data, error } = await supabase.from("posts").insert(defaultPost);
+// export async function createPost(router) {
+//   const { data, error } = await supabase.from("posts").insert(defaultPost);
 
-  if (data[0].id) {
-    router.push(`/Posts/${data[0].id}`);
-  }
-}
+//   if (data[0].id) {
+//     router.push(`/Posts/${data[0].id}`);
+//   }
+// }
 
 export default function Posts({ posts }) {
   const router = useRouter();
 
+  async function createPost(router) {
+    const { data, error } = await supabase.from("posts").insert(defaultPost);
+
+    if (data[0].id) {
+      router.push(`/Posts/${data[0].id}`);
+    }
+  }
   return (
     <div>
       <h1>Published Blogs</h1>
+
+      <div className="center">
+        {/* <button
+          type="button"
+          className="blue-button"
+          onClick={() => createPost(router)}
+        >
+          Create New Post
+        </button> */}
+
+        <Button
+          className={"blue-button"}
+          handleClick={() => createPost(router)}
+        >
+          Create New Post
+        </Button>
+      </div>
       <PostPreview posts={posts} />
-      <button
+      {/* <button
         type="button"
         className="blue-button"
         onClick={() => createPost(router)}
       >
         Create New Post
-      </button>
-      {/* <Button className={"blue-button"} handleClick={createPost()}>
-        Create New Post
-      </Button> */}
+      </button> */}
     </div>
   );
 }

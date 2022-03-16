@@ -1,0 +1,15 @@
+.Posts {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 60px;
+  margin: 0px 100px;
+}
+
+.PostPreview {
+  border: 2px solid black;
+  border-radius: 4px;
+  padding: 60px;
+  background-color: white;
+  text-align: center;
+}
