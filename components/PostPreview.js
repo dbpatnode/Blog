@@ -11,6 +11,7 @@ const PostPreview = ({ posts }) => {
               <h2>
                 <Link href={`/Posts/${id}`}>{title}</Link>
               </h2>
+
               <p> {excerpt} </p>
             </div>
           )

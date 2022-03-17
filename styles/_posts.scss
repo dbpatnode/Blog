@@ -7,9 +7,21 @@
 }
 
 .PostPreview {
+  width: 35%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   border: 2px solid black;
   border-radius: 4px;
   padding: 60px;
   background-color: white;
   text-align: center;
+
+  h2,
+  p {
+    overflow: hidden;
+    max-width: 20ch;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
 }
