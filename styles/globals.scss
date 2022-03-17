@@ -2,6 +2,8 @@
 @import "buttons";
 @import "posts";
 @import "post";
+@import "footer";
+
 html,
 body {
   padding: 0;
@@ -20,6 +22,15 @@ p {
   overflow-wrap: break-word;
   letter-spacing: 0.6px;
   line-height: 20pt;
+}
+
+.page-container {
+  position: relative;
+  min-height: 100vh;
+}
+
+.content-wrap {
+  padding-bottom: 150px; /* Footer height */
 }
 
 .center {
