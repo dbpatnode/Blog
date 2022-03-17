@@ -1,8 +1,8 @@
 import { useRouter } from "next/router";
 import { supabase } from "../../utils/supabaseClient";
 import PostPreview from "../../components/PostPreview";
-// import styles from "../../styles/Home.module.scss";
 import Button from "../../components/Button.js";
+
 export async function getStaticProps() {
   const { data: posts, error } = await supabase.from("posts").select("*");
 
@@ -23,14 +23,6 @@ const defaultPost = {
   excerpt: "dsajfksadjhf",
 };
 
-// export async function createPost(router) {
-//   const { data, error } = await supabase.from("posts").insert(defaultPost);
-
-//   if (data[0].id) {
-//     router.push(`/Posts/${data[0].id}`);
-//   }
-// }
-
 export default function Posts({ posts }) {
   const router = useRouter();
 
@@ -41,34 +33,18 @@ export default function Posts({ posts }) {
       router.push(`/Posts/${data[0].id}`);
     }
   }
+
   return (
-    <div>
+    <div className="top-margin">
       <h1>Published Blogs</h1>
-
       <div className="center">
-        {/* <button
-          type="button"
-          className="blue-button"
-          onClick={() => createPost(router)}
-        >
-          Create New Post
-        </button> */}
-
         <Button
           className={"blue-button"}
           handleClick={() => createPost(router)}
-        >
-          Create New Post
-        </Button>
+          text={"Create New Post"}
+        />
       </div>
       <PostPreview posts={posts} />
-      {/* <button
-        type="button"
-        className="blue-button"
-        onClick={() => createPost(router)}
-      >
-        Create New Post
-      </button> */}
     </div>
   );
 }

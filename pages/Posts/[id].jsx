@@ -1,5 +1,6 @@
 import { useRouter } from "next/router";
 import { supabase } from "../../utils/supabaseClient";
+import Button from "../../components/Button.js";
 
 export async function getServerSideProps({ params }) {
   const { data: post, error } = await supabase
@@ -35,30 +36,28 @@ export async function deletePost(id, router) {
 
 export default function PostPage({ post }) {
   const router = useRouter();
-  const { title, content, id } = post;
+  const { title, content, id, is_published } = post;
 
   return (
-    <div className="" key={id}>
+    <div className="center column-container top-margin" key={id}>
       <h2>{title}</h2>
       <p>{content}</p>
-      <button
-        type="button"
-        className="green-button"
-        onClick={() => updatePost(id, router)}
-      >
-        Publish
-      </button>
-      <button
-        type="button"
-        className="red-button"
-        onClick={() => {
-          window.confirm("Are you sure you wish to delete this item?")
-            ? deletePost(id, router)
-            : "cancel";
-        }}
-      >
-        Delete
-      </button>
+      <span>
+        <Button
+          className={"green-button"}
+          handleClick={() => updatePost(id, router)}
+          text={is_published ? "Update" : "Publish"}
+        />
+        <Button
+          className={"red-button"}
+          handleClick={() => {
+            window.confirm("Are you sure you wish to delete this item?")
+              ? deletePost(id, router)
+              : "cancel";
+          }}
+          text={"Delete"}
+        />
+      </span>
     </div>
   );
 }
