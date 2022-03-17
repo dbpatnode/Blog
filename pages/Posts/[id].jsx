@@ -39,7 +39,7 @@ export default function PostPage({ post }) {
   const { title, content, id, is_published } = post;
 
   return (
-    <div className="center column-container top-margin" key={id}>
+    <div className="center column-container top-margin post" key={id}>
       <h2>{title}</h2>
       <p>{content}</p>
       <span>
