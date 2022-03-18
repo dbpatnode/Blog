@@ -31,7 +31,7 @@ const PostPreview = ({ posts }) => {
                   <p>{excerpt}</p>
                   <div class="user-info">
                     <h5>July Dec</h5>
-                    <small>2h ago.</small>
+                    <small>2h ago</small>
                   </div>
                 </div>
               </div>
