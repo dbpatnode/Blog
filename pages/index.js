@@ -18,7 +18,7 @@ export default function Home() {
               <div class="right-circle">
                 <img src="https://cdn-icons-png.flaticon.com/512/1250/1250965.png" />
               </div>
-              <p>Check Posts ></p>
+              <p>{"Check Posts >"}</p>
             </div>
           </Link>
         </div>
