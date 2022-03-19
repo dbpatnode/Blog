@@ -5,6 +5,15 @@
 @import "post";
 @import "footer";
 
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
 html,
 body {
   padding: 0;
@@ -13,17 +22,6 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
-
-// h1 {
-//   text-align: center;
-// }
-
-// h2,
-// p {
-//   overflow-wrap: break-word;
-//   letter-spacing: 0.6px;
-//   line-height: 20pt;
-// }
 
 .page-container {
   position: relative;
