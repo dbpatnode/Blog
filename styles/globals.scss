@@ -1,5 +1,6 @@
 @import "navbar";
 @import "buttons";
+@import "homepage";
 @import "posts";
 @import "post";
 @import "footer";
@@ -13,16 +14,16 @@ body {
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
-h1 {
-  text-align: center;
-}
+// h1 {
+//   text-align: center;
+// }
 
-h2,
-p {
-  overflow-wrap: break-word;
-  letter-spacing: 0.6px;
-  line-height: 20pt;
-}
+// h2,
+// p {
+//   overflow-wrap: break-word;
+//   letter-spacing: 0.6px;
+//   line-height: 20pt;
+// }
 
 .page-container {
   position: relative;
