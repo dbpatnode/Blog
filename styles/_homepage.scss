@@ -1,11 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
-// * {
-//   padding: 0;
-//   margin: 0;
-//   box-sizing: border-box;
-//   font-family: "Poppins", sans-serif;
-// }
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
 
 // body {
 //   padding: 35px 60px;
@@ -68,7 +68,8 @@
 .hero {
   display: flex;
   justify-content: space-between;
-  margin-top: 75px;
+  margin-top: 50px;
+  padding: 35px 60px;
 }
 
 .right {
@@ -212,8 +213,13 @@
   top: 0;
 }
 
-@media only screen and (max-width: 1025px) {
+@media only screen and (max-width: 600px) {
   .hero {
     flex-direction: column;
+  }
+}
+@media only screen and (min-width: 1600px) {
+  .hero {
+    padding: 75px 300px;
   }
 }
