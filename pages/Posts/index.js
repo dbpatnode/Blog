@@ -16,23 +16,23 @@ export async function getStaticProps() {
   };
 }
 
-const defaultPost = {
-  title: "default title2",
-  is_published: false,
-  content: "this is some content",
-  excerpt: "dsajfksadjhf",
-};
+// const defaultPost = {
+//   title: "default title2",
+//   is_published: false,
+//   content: "this is some content",
+//   excerpt: "dsajfksadjhf",
+// };
 
 export default function Posts({ posts }) {
   const router = useRouter();
 
-  async function createPost(router) {
-    const { data, error } = await supabase.from("posts").insert(defaultPost);
+  // async function createPost(router) {
+  //   const { data, error } = await supabase.from("posts").insert(defaultPost);
 
-    if (data[0].id) {
-      router.push(`/Posts/${data[0].id}`);
-    }
-  }
+  //   if (data[0].id) {
+  //     router.push(`/Posts/${data[0].id}`);
+  //   }
+  // }
 
   return (
     <div className="top-margin">
@@ -40,7 +40,7 @@ export default function Posts({ posts }) {
       <div className="center">
         <Button
           className={"blue-button"}
-          handleClick={() => createPost(router)}
+          handleClick={() => router.push(`/CreatePost`)}
           text={"Create New Post"}
         />
       </div>

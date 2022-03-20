@@ -1,10 +1,15 @@
 .blue-button {
   border: 2px solid rgb(0, 26, 255);
-  color: rgb(13, 22, 97);
+  padding: 10px 40px;
+  background-color: rgb(101, 116, 250);
+  color: rgb(233, 235, 252);
+  font-size: large;
   cursor: pointer;
 }
 .blue-button:hover {
-  background-color: rgb(233, 235, 252);
+  background-color: rgb(152, 162, 255);
+  color: rgb(13, 22, 97);
+  color: rgb(233, 235, 252);
 }
 
 .green-button {
