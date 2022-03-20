@@ -26,7 +26,16 @@ function CreatePost() {
   }
 
   async function createNewPost() {
-    if (!title || !content) return;
+    if (!title || !content) {
+      return (
+        <div className="no-content-error">
+          <p>
+            Title, content and excerpts are required before publishing. Please
+            fill those bad boys in.
+          </p>
+        </div>
+      );
+    }
     // const user = supabase.auth.user();
     // const id = uuid();
     // post.id = id;

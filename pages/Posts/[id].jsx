@@ -1,7 +1,7 @@
 import { useRouter } from "next/router";
 import { supabase } from "../../utils/supabaseClient";
 import Button from "../../components/Button.js";
-
+import { Remarkable } from "remarkable";
 export async function getServerSideProps({ params }) {
   const { data: post, error } = await supabase
     .from("posts")
@@ -35,13 +35,15 @@ export async function deletePost(id, router) {
 }
 
 export default function PostPage({ post }) {
+  const md = new Remarkable();
   const router = useRouter();
   const { title, content, id, is_published } = post;
 
   return (
     <div className="center column-container top-margin post" key={id}>
       <h2>{title}</h2>
-      <p>{content}</p>
+      {/* converts string that md creates into html: */}
+      <div dangerouslySetInnerHTML={{ __html: md.render(content) }} />
       <span>
         <Button
           className={"green-button"}
