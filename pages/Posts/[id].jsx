@@ -40,16 +40,20 @@ export default function PostPage({ post }) {
   const { title, content, id, is_published } = post;
 
   return (
-    <div className="center column-container top-margin post" key={id}>
-      <h2>{title}</h2>
-      {/* converts string that md creates into html: */}
-      <div dangerouslySetInnerHTML={{ __html: md.render(content) }} />
+    <div className="  top-margin post" key={id}>
+      <h1 className="title">{title}</h1>
+
+      <div
+        className="content-view"
+        /* converts string that md creates into html: */
+        dangerouslySetInnerHTML={{ __html: md.render(content) }}
+      />
       <span>
-        <Button
+        {/* <Button
           className={"green-button"}
           handleClick={() => updatePost(id, router)}
           text={is_published ? "Update" : "Publish"}
-        />
+        /> */}
         <Button
           className={"red-button"}
           handleClick={() => {
