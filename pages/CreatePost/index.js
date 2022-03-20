@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useRouter } from "next/router";
 import dynamic from "next/dynamic";
 import "easymde/dist/easymde.min.css";
+import Button from "../../components/Button.js";
 import { supabase } from "../../utils/supabaseClient";
 
 const SimpleMDE = dynamic(() => import("react-simplemde-editor"), {
@@ -18,7 +19,7 @@ const initialState = {
 
 function CreatePost() {
   const [post, setPost] = useState(initialState);
-  const { title, content, is_published, excerpt } = post;
+  const { title, content, excerpt, is_published } = post;
   const router = useRouter();
   function onChange(e) {
     setPost(() => ({ ...post, [e.target.name]: e.target.value }));
@@ -60,9 +61,12 @@ function CreatePost() {
         value={post.content}
         onChange={(value) => setPost({ ...post, content: value })}
       />
-      <button type="button" className="blue-button" onClick={createNewPost}>
-        Publish
-      </button>
+
+      <Button
+        className={"green-button"}
+        handleClick={() => createNewPost()}
+        text={is_published ? "Update" : "Publish"}
+      />
     </div>
   );
 }
