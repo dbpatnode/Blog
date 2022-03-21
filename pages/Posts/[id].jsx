@@ -2,6 +2,8 @@ import { useRouter } from "next/router";
 import { supabase } from "../../utils/supabaseClient";
 import Button from "../../components/Button.js";
 import { Remarkable } from "remarkable";
+import { Markup } from "interweave";
+
 export async function getServerSideProps({ params }) {
   const { data: post, error } = await supabase
     .from("posts")
@@ -35,7 +37,7 @@ export async function deletePost(id, router) {
 }
 
 export default function PostPage({ post }) {
-  const md = new Remarkable();
+  // const md = new Remarkable();
   const router = useRouter();
   const { title, content, id, is_published } = post;
 
@@ -44,10 +46,14 @@ export default function PostPage({ post }) {
       <h1 className="title">{title}</h1>
 
       <div
-        className="content-view"
-        /* converts string that md creates into html: */
-        dangerouslySetInnerHTML={{ __html: md.render(content) }}
+      // className="content-view"
+      // /* converts string that md creates into html: */
+      // dangerouslySetInnerHTML={{ __html: md.render(content) }}
       />
+
+      <div>
+        <Markup content={content} />
+      </div>
       <span>
         {/* <Button
           className={"green-button"}
