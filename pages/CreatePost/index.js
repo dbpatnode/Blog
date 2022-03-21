@@ -1,4 +1,3 @@
-// pages/create-post.js
 import { useState } from "react";
 // import { v4 as uuid } from "uuid";
 import { useRouter } from "next/router";
@@ -49,9 +48,7 @@ function CreatePost() {
   }
   return (
     <div>
-      <h1 className="text-3xl font-semibold tracking-wide mt-6">
-        Create new post
-      </h1>
+      <h1>Create new post</h1>
       <input
         onChange={onChange}
         name="title"

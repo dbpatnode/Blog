@@ -1,37 +1,3 @@
-// .Posts {
-//   display: flex;
-//   flex-wrap: wrap;
-//   justify-content: center;
-//   gap: 60px;
-//   margin: 0px 100px;
-// }
-
-// .PostPreview {
-//   width: 35%;
-//   display: flex;
-//   flex-direction: column;
-//   align-items: center;
-//   border: 2px solid black;
-//   border-radius: 4px;
-//   padding: 60px;
-//   background-color: white;
-//   text-align: center;
-
-//   h2,
-//   p {
-//     overflow: hidden;
-//     max-width: 20ch;
-//     text-overflow: ellipsis;
-//     white-space: nowrap;
-//   }
-// }
-
-// @media only screen and (max-width: 1025px) {
-//   .PostPreview {
-//     width: 200%;
-//   }
-// }
-
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 * {
   box-sizing: border-box;
@@ -72,6 +38,13 @@
   align-items: flex-start;
   padding: 20px;
   min-height: 250px;
+}
+
+.card-buttons {
+  margin-top: 0px;
+  display: flex;
+  width: 100%;
+  justify-content: center;
 }
 
 .tag {

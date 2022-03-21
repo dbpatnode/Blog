@@ -1,11 +1,6 @@
 import dayjs from "dayjs";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faCoffee,
-  faPencilSquare,
-  faTrash,
-  faTrashAlt,
-} from "@fortawesome/free-solid-svg-icons";
+import { faPencilSquare, faTrashAlt } from "@fortawesome/free-solid-svg-icons";
 import { useRouter } from "next/router";
 import { supabase } from "../utils/supabaseClient";
 import timeSincePosted from "./TimeSincePosted";
