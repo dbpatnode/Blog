@@ -29,6 +29,20 @@
 .red-button:hover {
   background-color: rgb(253, 243, 243);
 }
+
+.trash-icon {
+  color: rgb(190, 0, 0);
+}
+
+.edit-icon {
+  color: rgb(12, 145, 0);
+}
+
+.icon-btn {
+  background-color: white;
+  border: 0px;
+  cursor: pointer;
+}
 button {
   padding: 8px;
   margin: 10px;
