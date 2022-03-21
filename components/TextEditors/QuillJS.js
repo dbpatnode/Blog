@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import ReactQuill from "react-quill";
-import "react-quill/dist/quill.snow.css";
+// import "react-quill/dist/quill.snow.css";
 import { useRouter } from "next/router";
 import Button from "../../components/Button.js";
 import { supabase } from "../../utils/supabaseClient";
@@ -14,9 +14,9 @@ const initialState = {
 
 const modules = {
   toolbar: [
-    [{ header: "1" }, { header: "2" }, { font: [] }],
+    [{ header: "1" }, { header: "2" }],
     [{ size: [] }],
-    ["bold", "italic", "underline", "strike", "blockquote"],
+    ["bold", "italic", "underline", "strike", "blockquote", "code-block"],
     [
       { list: "ordered" },
       { list: "bullet" },
@@ -28,7 +28,7 @@ const modules = {
   ],
   clipboard: {
     // toggle to add extra line breaks when pasting HTML:
-    matchVisual: false,
+    matchVisual: true,
   },
 };
 

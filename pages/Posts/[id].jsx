@@ -1,8 +1,7 @@
 import { useRouter } from "next/router";
 import { supabase } from "../../utils/supabaseClient";
 import Button from "../../components/Button.js";
-import { Remarkable } from "remarkable";
-import { Markup } from "interweave";
+import parse from "html-react-parser";
 
 export async function getServerSideProps({ params }) {
   const { data: post, error } = await supabase
@@ -42,7 +41,7 @@ export default function PostPage({ post }) {
   const { title, content, id, is_published } = post;
 
   return (
-    <div className="  top-margin post" key={id}>
+    <div className="top-margin post" key={id}>
       <h1 className="title">{title}</h1>
 
       <div
@@ -51,9 +50,7 @@ export default function PostPage({ post }) {
       // dangerouslySetInnerHTML={{ __html: md.render(content) }}
       />
 
-      <div>
-        <Markup content={content} />
-      </div>
+      <div className="Content">{parse(content)}</div>
       <span>
         {/* <Button
           className={"green-button"}

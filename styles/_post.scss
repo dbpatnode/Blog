@@ -1,19 +1,64 @@
+@import "react-quill/dist/quill.snow.css";
 .post {
   margin: 0 10vw;
 
-  .title {
-    font-size: 64px;
-  }
-  p {
-    margin: 10px;
-  }
-  img {
-    max-width: 77vw;
-    align-items: center;
+  // .content {
+  h1 {
+    font-size: 2em;
   }
 
-  a {
-    cursor: pointer;
-    color: grey;
+  h2 {
+    font-size: 1.5em;
+  }
+
+  .ql-size-small {
+    font-size: 0.75em;
+  }
+
+  .ql-size-large {
+    font-size: 1.5em;
+  }
+
+  .ql-size-huge {
+    font-size: 2.5em;
+  }
+
+  .ql-syntax {
+    background-color: #23241f;
+    color: #f8f8f2;
+    overflow: visible;
+  }
+
+  blockquote {
+    border-left: 4px solid #ccc;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    padding-left: 16px;
+  }
+
+  .ql-indent-1 {
+    padding-left: 3em;
+  }
+
+  .ql-indent-2 {
+    padding-left: 6em;
+  }
+  .ql-indent-3 {
+    padding-left: 9em;
+  }
+  .ql-indent-4 {
+    padding-left: 12em;
+  }
+  .ql-indent-5 {
+    padding-left: 15em;
+  }
+  .ql-indent-6 {
+    padding-left: 18em;
+  }
+  .ql-indent-7 {
+    padding-left: 21em;
+  }
+  .ql-indent-8 {
+    padding-left: 24em;
   }
 }
