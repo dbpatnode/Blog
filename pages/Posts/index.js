@@ -1,24 +1,33 @@
+import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import { supabase } from "../../utils/supabaseClient";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCirclePlus } from "@fortawesome/free-solid-svg-icons";
 import PostPreview from "../../components/PostPreview";
 import Button from "../../components/Button.js";
+import { fetchAllPosts } from "../../components/APICalls/Post";
 
-export async function getStaticProps() {
-  const { data: posts, error } = await supabase.from("posts").select("*");
+// export async function getStaticProps() {
+//   const { data: posts, error } = await supabase.from("posts").select("*");
 
-  if (error) {
-    alert(error.message);
-  }
-  return {
-    props: {
-      posts,
-    },
-  };
-}
+//   if (error) {
+//     alert(error.message);
+//   }
+//   return {
+//     props: {
+//       posts,
+//     },
+//   };
+// }
 
-export default function Posts({ posts }) {
+// export default function Posts({ posts }) {
+export default function Posts() {
+  const [posts, setPosts] = useState(null);
+
+  useEffect(() => {
+    fetchAllPosts(setPosts);
+  }, []);
+
   const router = useRouter();
 
   let blueButtonText = (

@@ -1,6 +1,19 @@
 // import { useRouter } from "next/router";
 import { supabase } from "../../utils/supabaseClient";
 
+export async function fetchAllPosts(setPosts) {
+  const { data, error } = await supabase.from("posts").select("*");
+
+  setPosts(data);
+  // if (error) {
+  //   alert(error.message);
+  // }
+  // return {
+  //   props: {
+  //     posts,
+  //   },
+  // };
+}
 export async function fetchPost(id, setPost) {
   if (!id) return;
   const { data } = await supabase

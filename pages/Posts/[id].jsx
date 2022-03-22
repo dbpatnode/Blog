@@ -16,7 +16,7 @@ export default function PostPage() {
 
   if (!post) return null;
 
-  const { title, content, is_published } = post;
+  const { title, content } = post;
 
   return (
     <div className="top-margin post" key={id}>
