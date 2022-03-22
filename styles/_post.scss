@@ -1,6 +1,6 @@
 @import "react-quill/dist/quill.snow.css";
 .post {
-  margin: 0 10vw;
+  // margin: 0 10vw;
 
   // .content {
   h1 {
@@ -60,5 +60,15 @@
   }
   .ql-indent-8 {
     padding-left: 24em;
+  }
+
+  iframe {
+    border: 0;
+    align-self: center;
+    height: 35vw;
+    left: 0;
+    position: relative;
+    top: 0;
+    width: 75vw;
   }
 }

@@ -1,16 +1,14 @@
-import dayjs from "dayjs";
-import { useRouter } from "next/router";
-import timeSincePosted from "./TimeSincePosted";
 import Link from "next/link";
 import PostPreviewButtons from "./PostPreviewComponents/Buttons";
 import TimeInformation from "./PostPreviewComponents/TimeInformation";
+import parse from "html-react-parser";
 const PostPreview = ({ posts }) => {
-  const router = useRouter();
   return (
     <div className="card-container">
       {posts?.map((post) => {
-        const { is_published, title, excerpt, id, created_at } = post;
-        const formatedDate = dayjs(created_at).format("ddd MMMM D, YYYY");
+        const { is_published, title, excerpt, id, created_at, content } = post;
+
+        // const parsedContent = parse(content);
 
         return (
           is_published && (

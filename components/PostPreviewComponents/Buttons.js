@@ -12,13 +12,12 @@ export async function deletePost(id, router) {
 export default function Buttons({ id }) {
   const router = useRouter();
   return (
-    <div class="card-buttons">
+    <div className="card-buttons">
       <Button
         className="edit-icon icon-btn"
         handleClick={() => {
-          /* this is where we'll add the edit*/ console.log(
-            "this is where we'll add the edit"
-          );
+          /* this is where we'll add the edit*/
+          console.log("this is where we'll add the edit");
         }}
         text={<FontAwesomeIcon icon={faPencilSquare} size="2x" />}
       />

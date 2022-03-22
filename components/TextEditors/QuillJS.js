@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useMemo } from "react";
 import ReactQuill from "react-quill";
 // import "react-quill/dist/quill.snow.css";
 import { useRouter } from "next/router";
@@ -8,29 +8,39 @@ import { supabase } from "../../utils/supabaseClient";
 const initialState = {
   title: "",
   is_published: false,
-  content: "dfsdafsad",
+  content: "",
   excerpt: "",
 };
 
-const modules = {
-  toolbar: [
-    [{ header: "1" }, { header: "2" }],
-    [{ size: [] }],
-    ["bold", "italic", "underline", "strike", "blockquote", "code-block"],
-    [
-      { list: "ordered" },
-      { list: "bullet" },
-      { indent: "-1" },
-      { indent: "+1" },
-    ],
-    ["link", "image", "video"],
-    ["clean"],
-  ],
-  clipboard: {
-    // toggle to add extra line breaks when pasting HTML:
-    matchVisual: true,
-  },
-};
+// const modules = {
+//   toolbar: {
+//     container: [
+//       [{ header: "1" }, { header: "2" }],
+//       [{ size: [] }],
+//       ["bold", "italic", "underline", "strike", "blockquote", "code-block"],
+//       [
+//         { list: "ordered" },
+//         { list: "bullet" },
+//         { indent: "-1" },
+//         { indent: "+1" },
+//       ],
+//       ["link", "image", "video"],
+//       ["clean"],
+//     ],
+//     handlers: {
+//       image: customImageHandler,
+//     },
+//   },
+//   clipboard: {
+//     // toggle to add extra line breaks when pasting HTML:
+//     matchVisual: true,
+//   },
+//   //   methods: {
+//   //     customImageHandler(props) {
+//   //       console.log(props);
+//   //     },
+//   //   },
+// };
 
 const QuillJS = () => {
   const [post, setPost] = useState(initialState);
@@ -40,6 +50,27 @@ const QuillJS = () => {
   function onChange(e) {
     setPost(() => ({ ...post, [e.target.name]: e.target.value }));
   }
+
+  const modules = useMemo(
+    () => ({
+      toolbar: {
+        container: [
+          [{ header: [1, 2, false] }],
+          ["bold", "italic", "underline"],
+          [{ list: "ordered" }, { list: "bullet" }],
+          ["image", "code-block"],
+        ],
+        handlers: {
+          image: customImageHandler,
+        },
+      },
+    }),
+    []
+  );
+
+  const customImageHandler = (props) => {
+    console.log(props);
+  };
 
   async function createNewPost() {
     if (!title || !content) {
