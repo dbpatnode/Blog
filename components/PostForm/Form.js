@@ -4,10 +4,14 @@ import Button from "../Button.js";
 import TextEditor from "./TextEditor.js";
 import { createPost, updatePost } from "../APICalls/Post";
 
-const QuillJS = ({ post, setPost, onChange }) => {
+const Form = ({ post, setPost, onChange }) => {
   const router = useRouter();
   const { title, content, excerpt, is_published, id } = post;
+  console.log("CONTENT FROM FORM: ", content);
 
+  const inTheOnChange = (post) => {
+    console.log(post);
+  };
   return (
     <div>
       <input
@@ -26,7 +30,9 @@ const QuillJS = ({ post, setPost, onChange }) => {
       />
       <TextEditor
         content={content}
-        onChange={(value) => setPost({ ...post, content: value })}
+        setPost={setPost}
+        post={post}
+        // (value) => setPost({ ...post, content: value })
       />
       {is_published ? (
         <Button
@@ -37,9 +43,7 @@ const QuillJS = ({ post, setPost, onChange }) => {
       ) : (
         <Button
           className={"green-button"}
-          handleClick={() =>
-            createPost(title, content, excerpt, is_published, router)
-          }
+          handleClick={() => createPost(title, content, excerpt, router)}
           text="Publish"
         />
       )}
@@ -47,4 +51,4 @@ const QuillJS = ({ post, setPost, onChange }) => {
   );
 };
 
-export default QuillJS;
+export default Form;

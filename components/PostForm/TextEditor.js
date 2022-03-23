@@ -24,7 +24,12 @@ import "react-quill/dist/quill.snow.css";
 //   },
 // };
 
-const TextEditor = ({ content }) => {
+const TextEditor = ({ content, setPost, post }) => {
+  const handleOnChange = (e) => {
+    console.log(e);
+    setPost(() => ({ ...post, content: e }));
+    // console.log(post);
+  };
   const modules = useMemo(
     () => ({
       toolbar: {
@@ -59,7 +64,14 @@ const TextEditor = ({ content }) => {
 
   return (
     <div>
-      <ReactQuill theme="snow" value={content} modules={modules} />
+      <ReactQuill
+        theme="snow"
+        value={content}
+        modules={modules}
+        onChange={(e) => {
+          handleOnChange(e);
+        }}
+      />
     </div>
   );
 };
