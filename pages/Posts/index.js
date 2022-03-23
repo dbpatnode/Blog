@@ -7,13 +7,12 @@ import Button from "../../components/Button.js";
 import { fetchAllPosts } from "../../components/APICalls/Post";
 
 export default function Posts() {
+  const router = useRouter();
   const [posts, setPosts] = useState(null);
 
   useEffect(() => {
     fetchAllPosts(setPosts);
   }, []);
-
-  const router = useRouter();
 
   let blueButtonText = (
     <p>

@@ -6,8 +6,8 @@ import parse from "html-react-parser";
 import { deletePost, fetchPost } from "../../components/APICalls/Post";
 
 export default function PostPage() {
-  const [post, setPost] = useState(null);
   const router = useRouter();
+  const [post, setPost] = useState(null);
   const { id } = router.query;
 
   useEffect(() => {

@@ -8,9 +8,9 @@ const timeSincePosted = (created_at) => {
   let days = Math.floor(difference / 86400);
   let hours = Math.floor(difference / 3600) % 24;
   let minutes = Math.floor(difference / 60) % 60;
-  // let seconds = difference % 60;
+  let seconds = difference % 60;
   if (days <= 0) {
-    return `${hours} hours and ${minutes} minutes ago`;
+    return `${hours} hours and ${minutes} minutes ago `;
   } else if (days == 1) {
     return `${days} day and ${hours} hours ago`;
   } else if (days == 1 && hours == 1) {

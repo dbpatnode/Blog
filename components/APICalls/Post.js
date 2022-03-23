@@ -20,11 +20,33 @@ export async function deletePost(id, router) {
   return router.push("/Posts");
 }
 
-export async function updatePost(id, router) {
+export async function createPost(
+  title,
+  content,
+  excerpt,
+  is_published,
+  router
+) {
+  if (!title || !content) return;
+  // const user = supabase.auth.user();
+  // const id = uuid();
+  // post.id = id;
+  let is_published = true;
+  const { data } = await supabase
+    .from("posts")
+    .insert([{ title, content, excerpt, is_published }])
+    //  user_id: user.id, user_email: user.email }])
+    .single();
+  router.push(`/Posts/${data.id}`);
+}
+
+export async function updatePost(id, title, content, excerpt, router) {
+  console.log("were being called");
+  // console.log(post);
   const { data, error } = await supabase
     .from("posts")
-    .update({ is_published: true })
-    .eq("id", id);
+    .update({ title, content, excerpt })
+    .match({ id });
 
-  router.push("/Posts");
+  router.push(`/Posts/${id}`);
 }
