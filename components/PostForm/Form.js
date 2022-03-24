@@ -6,28 +6,50 @@ import { createPost, updatePost } from "../APICalls/Post";
 
 const Form = ({ post, setPost, onChange }) => {
   const router = useRouter();
-  const { title, content, excerpt, is_published, id } = post;
-  console.log("CONTENT FROM FORM: ", content);
+  const [errorMessage, setErrorMessage] = useState();
+  console.log("errorMessage: ", errorMessage);
 
-  const inTheOnChange = (post) => {
-    console.log(post);
+  const { title, content, excerpt, is_published, id } = post;
+
+  const handleBlur = (e) => {
+    const value = e.target.value.trim();
+    console.log("value: ", value);
+
+    console.log(e);
+    if (!value) {
+      setErrorMessage({ ...errorMessage, [e.target.name]: true });
+    } else {
+      setErrorMessage({ ...errorMessage, [e.target.name]: false });
+    }
   };
   return (
     <div>
       <input
         required
-        onChange={onChange}
         name="title"
         placeholder="Title"
         value={title}
+        onChange={onChange}
+        onBlur={handleBlur}
       />
+      {errorMessage["title"] && (
+        <div>
+          <p>Title required...</p>
+        </div>
+      )}
       <input
         required
         onChange={onChange}
         name="excerpt"
         placeholder="Excerpt"
         value={excerpt}
+        onBlur={handleBlur}
       />
+      {errorMessage["excerpt"] && (
+        <div>
+          <p>Excerpt required...</p>
+        </div>
+      )}
       <TextEditor
         content={content}
         setPost={setPost}

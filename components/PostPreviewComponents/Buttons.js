@@ -17,7 +17,7 @@ export default function Buttons({ id }) {
         className="edit-icon icon-btn"
         handleClick={() => {
           /* this is where we'll add the edit*/
-          console.log("this is where we'll add the edit");
+          // console.log("this is where we'll add the edit");
         }}
         text={<FontAwesomeIcon icon={faPencilSquare} size="2x" />}
       />

@@ -15,7 +15,7 @@ function EditPost() {
   if (!post) return null;
 
   function onChange(e) {
-    console.log(e);
+    // console.log(e);
     setPost(() => ({ ...post, [e.target.name]: e.target.value }));
   }
 

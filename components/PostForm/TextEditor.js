@@ -26,7 +26,7 @@ import "react-quill/dist/quill.snow.css";
 
 const TextEditor = ({ content, setPost, post }) => {
   const handleOnChange = (e) => {
-    console.log(e);
+    // console.log(e);
     setPost(() => ({ ...post, content: e }));
     // console.log(post);
   };

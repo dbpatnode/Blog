@@ -35,7 +35,7 @@ export async function createPost(title, content, excerpt, router) {
 }
 
 export async function updatePost(id, title, content, excerpt, router) {
-  console.log("were being called");
+  // console.log("were being called");
   // console.log(post);
   const { data, error } = await supabase
     .from("posts")
@@ -43,7 +43,7 @@ export async function updatePost(id, title, content, excerpt, router) {
     .eq("id", id);
   // .match({ id });
 
-  console.log("data: ", data);
-  console.log("error: ", error);
-  router.push(`/Posts/${id}`);
+  //   console.log("data: ", data);
+  //   console.log("error: ", error);
+  //   router.push(`/Posts/${id}`);
 }
