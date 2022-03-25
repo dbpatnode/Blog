@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import { fetchPost } from "../../components/APICalls/Post";
-import PostForm from "../../components/PostForm/Form.js";
+import PostForm from "../../components/PostForm/PostForm.js";
 
 function EditPost() {
   const [post, setPost] = useState(null);

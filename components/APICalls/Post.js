@@ -45,5 +45,5 @@ export async function updatePost(id, title, content, excerpt, router) {
 
   //   console.log("data: ", data);
   //   console.log("error: ", error);
-  //   router.push(`/Posts/${id}`);
+  router.push(`/Posts/${id}`);
 }

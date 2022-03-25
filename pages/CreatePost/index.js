@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import PostForm from "../../components/PostForm/Form.js";
+import PostForm from "../../components/PostForm/PostForm.js";
 
 function CreatePost() {
   const [post, setPost] = useState({
