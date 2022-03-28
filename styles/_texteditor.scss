@@ -1,0 +1,24 @@
+.ql-editor {
+  min-height: 60vh;
+}
+
+.upper-inputs {
+  width: 100%;
+
+  input {
+    width: 100%;
+  }
+
+  input::placeholder {
+    font-style: italic;
+  }
+
+  textarea {
+    width: 100%;
+  }
+
+  textarea::placeholder {
+    font-style: italic;
+    // padding: 20px;
+  }
+}

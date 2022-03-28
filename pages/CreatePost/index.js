@@ -5,7 +5,7 @@ function CreatePost() {
   const [post, setPost] = useState({
     title: "",
     is_published: false,
-    content: "cdsfsadfsa",
+    content: "",
     excerpt: "",
   });
 

@@ -63,11 +63,12 @@ const TextEditor = ({ content, setPost, post }) => {
   // };
 
   return (
-    <div>
+    <div className="text-editor">
       <ReactQuill
         theme="snow"
         value={content}
         modules={modules}
+        placeholder="Write your masterpiece here..."
         onChange={(e) => {
           handleOnChange(e);
         }}

@@ -17,7 +17,7 @@ const TextInputs = ({ onChange, title, excerpt }) => {
   };
 
   return (
-    <div>
+    <div className="upper-inputs">
       <input
         required
         name="title"
