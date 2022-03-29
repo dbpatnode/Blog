@@ -9,7 +9,12 @@
     width: 100%;
     border: 1px solid #ccc;
     background: none;
+    margin: 5px 0px;
     // margin: 20px 0;
+  }
+
+  .upper-input:last-of-type {
+    margin: 5px 0px 0px 0px;
   }
 
   .upper-input::placeholder {
