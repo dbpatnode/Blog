@@ -17,9 +17,10 @@ const TextInputs = ({ onChange, title, excerpt }) => {
   };
 
   return (
-    <div className="upper-inputs">
+    <div className="upper-inputs-wrapper">
       <input
         required
+        className="upper-input title"
         name="title"
         placeholder="Title..."
         value={title}
@@ -27,12 +28,14 @@ const TextInputs = ({ onChange, title, excerpt }) => {
         onBlur={handleBlur}
       />
       {errorMessage["title"] && (
-        <div>
+        <span className="error-message-container">
           <p>Title required...</p>
-        </div>
+        </span>
       )}
       <textarea
         required
+        className="upper-input text-area"
+        maxLength={"300"}
         onChange={onChange}
         name="excerpt"
         placeholder="Post description..."
@@ -40,9 +43,9 @@ const TextInputs = ({ onChange, title, excerpt }) => {
         onBlur={handleBlur}
       />
       {errorMessage["excerpt"] && (
-        <div className="error">
+        <span className="error-message-container">
           <p>Excerpt required...</p>
-        </div>
+        </span>
       )}
     </div>
   );

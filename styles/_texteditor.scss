@@ -2,23 +2,27 @@
   min-height: 60vh;
 }
 
-.upper-inputs {
+.upper-inputs-wrapper {
   width: 100%;
 
-  input {
+  .upper-input {
     width: 100%;
+    border: 1px solid #ccc;
+    background: none;
+    margin: 20px 0;
   }
 
-  input::placeholder {
+  .upper-input::placeholder {
     font-style: italic;
+    padding: 0 12px;
   }
 
-  textarea {
-    width: 100%;
+  .title {
+    font-size: 36px;
+    margin: 0 auto;
   }
 
-  textarea::placeholder {
-    font-style: italic;
-    // padding: 20px;
+  .text-area {
+    resize: none;
   }
 }
