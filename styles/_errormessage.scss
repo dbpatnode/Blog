@@ -1,0 +1,16 @@
+.error-message-container {
+  display: flex;
+  border: 2px solid red;
+  border-radius: 5px;
+  color: red;
+  background: rgb(255, 214, 214);
+  margin: 10px 0;
+  padding: 10px;
+
+  .X {
+    padding-top: 4px;
+  }
+  p {
+    padding-left: 6px;
+  }
+}

@@ -9,7 +9,7 @@
     width: 100%;
     border: 1px solid #ccc;
     background: none;
-    margin: 20px 0;
+    // margin: 20px 0;
   }
 
   .upper-input::placeholder {
@@ -19,10 +19,10 @@
 
   .title {
     font-size: 36px;
-    margin: 0 auto;
   }
 
   .text-area {
+    // margin: 0 auto;
     resize: none;
   }
 }

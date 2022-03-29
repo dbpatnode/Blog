@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faXmarkCircle } from "@fortawesome/free-solid-svg-icons";
 
 const TextInputs = ({ onChange, title, excerpt }) => {
   const [errorMessage, setErrorMessage] = useState({
@@ -29,6 +31,7 @@ const TextInputs = ({ onChange, title, excerpt }) => {
       />
       {errorMessage["title"] && (
         <span className="error-message-container">
+          <FontAwesomeIcon className="X" icon={faXmarkCircle} />
           <p>Title required...</p>
         </span>
       )}
@@ -44,6 +47,7 @@ const TextInputs = ({ onChange, title, excerpt }) => {
       />
       {errorMessage["excerpt"] && (
         <span className="error-message-container">
+          <FontAwesomeIcon className="X" icon={faXmarkCircle} />
           <p>Excerpt required...</p>
         </span>
       )}
